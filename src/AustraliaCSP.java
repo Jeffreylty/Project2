@@ -28,15 +28,15 @@ public class AustraliaCSP extends CSP {
 		Variable T = new Variable("T", Domain.rgbDomain());
 		this.variables.add(T);
 		this.constraints = new HashSet<Constraint>();
-		this.constraints.add( Constraint.NotEqualConstraint(SA, WA));
-		this.constraints.add( Constraint.NotEqualConstraint(SA, NT));
-		this.constraints.add( Constraint.NotEqualConstraint(SA, Q));
-		this.constraints.add( Constraint.NotEqualConstraint(SA, NSW));
-		this.constraints.add( Constraint.NotEqualConstraint(SA, V));
-		this.constraints.add( Constraint.NotEqualConstraint(WA, NT));
-		this.constraints.add( Constraint.NotEqualConstraint(NT, Q));
-		this.constraints.add( Constraint.NotEqualConstraint(Q, NSW));
-		this.constraints.add( Constraint.NotEqualConstraint(NSW, V));
+		this.constraints.add( new NotEqualConstraint(SA, WA));
+		this.constraints.add( new NotEqualConstraint(SA, NT));
+		this.constraints.add( new NotEqualConstraint(SA, Q));
+		this.constraints.add( new NotEqualConstraint(SA, NSW));
+		this.constraints.add( new NotEqualConstraint(SA, V));
+		this.constraints.add( new NotEqualConstraint(WA, NT));
+		this.constraints.add( new NotEqualConstraint(NT, Q));
+		this.constraints.add( new NotEqualConstraint(Q, NSW));
+		this.constraints.add( new NotEqualConstraint(NSW, V));
 	}
 
 	public static void main(String[] args) {
@@ -46,7 +46,7 @@ public class AustraliaCSP extends CSP {
 		System.out.println("Backtracking search solver");
 		Solver solve =new Solver();
 		long start = new Date().getTime();
-		Assignment result = solve.BacktrackingSearchSolve(csp);
+		Assignment result = solve.BacktrackingSearchSolve(csp, null);
 		long end = new Date().getTime();
 		System.out.format("time: %.3f secs\n", (end-start)/1000.0);
 		System.out.println("result=" + result);
