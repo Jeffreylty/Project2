@@ -1,4 +1,4 @@
 public enum Contype {
     //constraint type
-    Red,Blue,Green
+    Red,Blue,Green,Test
 }

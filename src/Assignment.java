@@ -15,4 +15,12 @@ public class Assignment {
         return this.asign.containsKey(v);
     }
 
+    public Contype getValue(Variable v){
+        return this.asign.get(v);
+    }
+
+    public void delete(Variable v){
+        this.asign.remove(v);
+    }
+
 }

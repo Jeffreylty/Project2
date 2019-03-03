@@ -38,17 +38,4 @@ public class AustraliaCSP extends CSP {
 		this.constraints.add( new NotEqualConstraint(Q, NSW));
 		this.constraints.add( new NotEqualConstraint(NSW, V));
 	}
-
-	public static void main(String[] args) {
-		System.out.println("Australia Map Coloring Problem (AIMA 6.1.1)");
-		CSP csp = new CSP();
-		System.out.println(csp);
-		System.out.println("Backtracking search solver");
-		Solver solve =new Solver();
-		long start = new Date().getTime();
-		Assignment result = solve.BacktrackingSearchSolve(csp, null);
-		long end = new Date().getTime();
-		System.out.format("time: %.3f secs\n", (end-start)/1000.0);
-		System.out.println("result=" + result);
-	}
 }

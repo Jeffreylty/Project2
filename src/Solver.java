@@ -9,11 +9,17 @@ public class Solver {
         }else{
             Variable v = Select_Unassigned(csp, as);
             for(Contype c : Choose(v)){
-//                if(isConsis(v, c, as, csp ))
+                as.put(v,c);
+                if(isConsis(as, csp)){
+                    Assignment result= BacktrackingSearchSolve(csp, as);
+                    if(result!= null){
+                        return result;
+                    }
+                }else{
+                    as.delete(v);
+                }
             }
-
         }
-
         return null;
     }
 
@@ -35,27 +41,15 @@ public class Solver {
         return result;
     }
 
-//    public boolean isConsis(Variable v, Contype c, Assignment as, CSP csp){
-//        for(Constraint cons : csp.constraints){
-//            if(cons instanceof NotEqualConstraint){
-//                cons.
-//            }
-//            switch (cons.getConsType()){
-//                case 1:
-//                    if(cons.NotEqual.contains(v)){
-//                        for(Variable temp : cons.NotEqual){
-//                            if(temp.name.equals(v.name)){
-//
-//                            }
-//                        }
-//                    }
-//                    break;
-//
-//                default:
-//                    System.out.println("defalut constraint type");
-//                    break;
-//            }
-//        }
-//    }
+    public boolean isConsis(Assignment as, CSP csp){
+        for(Constraint cons : csp.constraints){
+            if(cons instanceof NotEqualConstraint){
+                if(!cons.isConsistent(as)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }
