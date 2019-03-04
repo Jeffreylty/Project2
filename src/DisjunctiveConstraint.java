@@ -1,4 +1,4 @@
-import java.util.HashSet;
+
 
 public class DisjunctiveConstraint extends Constraint {
     PrecedenceConstraints pa;
@@ -11,6 +11,6 @@ public class DisjunctiveConstraint extends Constraint {
 
     @Override
     public boolean isConsistent(Assignment as) {
-        return ((this.pa.isConsistent(as) || this.pa.isConsistent(as)));
+        return ((this.pa.isConsistent(as) || this.pb.isConsistent(as)));
     }
 }

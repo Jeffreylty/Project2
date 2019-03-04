@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Solver {
 
@@ -34,8 +34,8 @@ public class Solver {
     }
 
 
-    public HashSet<Contype> Choose(Variable v){
-        HashSet<Contype> result= new HashSet<Contype>();
+    public ArrayList<Contype> Choose(Variable v){
+        ArrayList<Contype> result= new ArrayList<Contype>();
         for(Contype c :v.dom.domain){
             result.add(c);
         }
@@ -44,16 +44,8 @@ public class Solver {
 
     public boolean isConsis(Assignment as, CSP csp){
         for(Constraint cons : csp.constraints){
-            if(cons instanceof NotEqualConstraint){
-                if(!cons.isConsistent(as)){
-                    return false;
-                }
-            }else if( cons instanceof PrecedenceConstraints){
-                if(!cons.isConsistent(as)){
-                    return false;
-                }
-            }else if(cons instanceof PrecedenceConstraints){
-
+            if(!cons.isConsistent(as)){
+                return false;
             }
         }
         return true;
