@@ -1,6 +1,4 @@
-import java.util.Date;
-import java.util.HashSet;
-
+import java.util.ArrayList;
 /**
  * Constraint satisfaction problem for coloring the map of Australia,
  * from AIMA Section 6.1 and Fig 6.1.
@@ -12,7 +10,7 @@ public class AustraliaCSP extends CSP {
 	 * Australia.
 	 */
 	public AustraliaCSP() {
-		this.variables = new HashSet<Variable>();
+		this.variables = new ArrayList<Variable>();
 		Variable WA = new Variable("WA", Domain.rgbDomain());
 		this.variables.add(WA);
 		Variable NT = new Variable("NT", Domain.rgbDomain());
@@ -27,7 +25,7 @@ public class AustraliaCSP extends CSP {
 		this.variables.add(SA);
 		Variable T = new Variable("T", Domain.rgbDomain());
 		this.variables.add(T);
-		this.constraints = new HashSet<Constraint>();
+		this.constraints = new ArrayList<Constraint>();
 		this.constraints.add( new NotEqualConstraint(SA, WA));
 		this.constraints.add( new NotEqualConstraint(SA, NT));
 		this.constraints.add( new NotEqualConstraint(SA, Q));

@@ -1,8 +1,8 @@
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class CSP {
-    HashSet<Variable> variables;
-    HashSet<Constraint> constraints;
+    ArrayList<Variable> variables;
+    ArrayList<Constraint> constraints;
 
     public boolean isComplete(Assignment as){
         for(Variable v : variables){
