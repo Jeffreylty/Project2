@@ -15,6 +15,7 @@ public class Solver {
                     if(result!= null){
                         return result;
                     }
+                    as.delete(v);
                 }else{
                     as.delete(v);
                 }
@@ -47,6 +48,12 @@ public class Solver {
                 if(!cons.isConsistent(as)){
                     return false;
                 }
+            }else if( cons instanceof PrecedenceConstraints){
+                if(!cons.isConsistent(as)){
+                    return false;
+                }
+            }else if(cons instanceof PrecedenceConstraints){
+
             }
         }
         return true;
