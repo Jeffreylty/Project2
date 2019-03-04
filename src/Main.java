@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("CSP by Tianyi Liu & Canruo Zou");
         int i = 1;
+        Scanner s = new Scanner(System.in);
         while (i!= 0) {
             System.out.println("Choose your test by entering the corresponding :\n 1. Australia CSP \n 2. Job Shop Scheduling CSP \n 3. N-Queen CSP \n 0. Quit ");
-            Scanner s = new Scanner(System.in);
             i = s.nextInt();
             if (i == 1) {
                 Australia();
@@ -20,6 +20,7 @@ public class Main {
                 NQueen(i);
             }
         }
+        s.close();
         System.out.println("The program ended!");
     }
 
