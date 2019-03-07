@@ -1,5 +1,5 @@
 
-
+// Constraint 1 or constraint 2
 public class DisjunctiveConstraint extends Constraint {
     PrecedenceConstraints pa;
     PrecedenceConstraints pb;

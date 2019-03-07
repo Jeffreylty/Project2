@@ -1,5 +1,6 @@
 import java.util.HashSet;
 
+// va + val <= vb
 public class PrecedenceConstraints extends Constraint {
     Variable va;
     Variable vb;

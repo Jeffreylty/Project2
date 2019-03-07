@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.Iterator;
 
+//Variables in the Hashset is not equal
 public class NotEqualConstraint extends Constraint {
     HashSet<Variable> NotEqual;
 

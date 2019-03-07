@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Solver {
 
+
+    //main backtraking method
     public Assignment BacktrackingSearchSolve(CSP csp ,Assignment as){
         if(csp.isComplete(as)){
             return as;
@@ -23,6 +25,7 @@ public class Solver {
         return null;
     }
 
+    //select unasigned variable
     public Variable Select_Unassigned(CSP csp , Assignment as){
         for(Variable v : csp.variables ){
             if(!as.contains(v)){
@@ -33,6 +36,7 @@ public class Solver {
     }
 
 
+    //select possible assignment from domain
     public ArrayList<Contype> Choose(Variable v){
         ArrayList<Contype> result= new ArrayList<Contype>();
         for(Contype c :v.dom.domain){
@@ -41,6 +45,7 @@ public class Solver {
         return result;
     }
 
+    //the main method that call individual isconsistent method for each constraint
     public boolean isConsis(Assignment as, CSP csp){
         for(Constraint cons : csp.constraints){
             if(!cons.isConsistent(as)){

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// super class of each CSP, contains a list of Variable and a list of Constraint
 public class CSP {
     ArrayList<Variable> variables;
     ArrayList<Constraint> constraints;

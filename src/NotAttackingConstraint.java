@@ -2,6 +2,7 @@ public class NotAttackingConstraint extends Constraint {
     Variable v1;
     Variable v2;
 
+    //va != vb
     public NotAttackingConstraint(Variable v1, Variable v2){
         this.v1=v1;
         this.v2=v2;

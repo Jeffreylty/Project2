@@ -1,4 +1,4 @@
-public class Contype  {
+public class Contype  { //the class store the possible value for vairiable. which is represented by a string
     String value;
 
     public static Contype iniWith(String i){
