@@ -11,6 +11,8 @@ public class Contype  {
         return this.value;
     }
 
-
-
+    @Override
+    public String toString() {
+        return value;
+    }
 }

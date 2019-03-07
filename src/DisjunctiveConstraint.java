@@ -13,4 +13,9 @@ public class DisjunctiveConstraint extends Constraint {
     public boolean isConsistent(Assignment as) {
         return ((this.pa.isConsistent(as) || this.pb.isConsistent(as)));
     }
+
+    @Override
+    public String toString() {
+        return pa.toString() + " || "+pb.toString();
+    }
 }

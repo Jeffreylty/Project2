@@ -20,4 +20,9 @@ public class PrecedenceConstraints extends Constraint {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return va.name + " + " + val + " <= "+vb.name;
+    }
 }

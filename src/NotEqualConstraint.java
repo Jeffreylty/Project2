@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class NotEqualConstraint extends Constraint {
     HashSet<Variable> NotEqual;
@@ -23,5 +24,18 @@ public class NotEqualConstraint extends Constraint {
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        String temp ="";
+        Iterator it = NotEqual.iterator();
+        while(it.hasNext()){
+            temp += it.next().toString();
+            if(it.hasNext()){
+                temp += " != ";
+            }
+        }
+        return temp;
     }
 }

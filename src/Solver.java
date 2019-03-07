@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Solver {
 
-
     public Assignment BacktrackingSearchSolve(CSP csp ,Assignment as){
         if(csp.isComplete(as)){
             return as;

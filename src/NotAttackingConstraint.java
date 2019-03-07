@@ -24,4 +24,9 @@ public class NotAttackingConstraint extends Constraint {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return v1.name + " Not Attack "+v2.name;
+    }
 }
