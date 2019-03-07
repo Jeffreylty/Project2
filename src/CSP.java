@@ -14,13 +14,14 @@ public class CSP {
     }
 
     @Override
+    // print each problem before solving it.
     public String toString() {
-        String result ="CSP: \nVariables: ";
+        String result ="CSP: \nVariables: "; //print each variable's name
         for(Variable v: variables){
             result+=v.name +" ";
         }
         result+= "\nConstraints: \n ";
-        for(Constraint c :constraints){
+        for(Constraint c :constraints){ //print each constraint by using individual toString methods.
             result += c.toString();
             result += "\n ";
         }

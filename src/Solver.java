@@ -5,19 +5,19 @@ public class Solver {
 
     //main backtraking method
     public Assignment BacktrackingSearchSolve(CSP csp ,Assignment as){
-        if(csp.isComplete(as)){
+        if(csp.isComplete(as)){ //if complete then return
             return as;
         }else{
-            Variable v = Select_Unassigned(csp, as);
-            for(Contype c : Choose(v)){
+            Variable v = Select_Unassigned(csp, as); //else select unassigned aviriable
+            for(Contype c : Choose(v)){ //choose a value from domain
                 as.put(v,c);
-                if(isConsis(as, csp)){
-                    Assignment result= BacktrackingSearchSolve(csp, as);
+                if(isConsis(as, csp)){ // if it is consistent, continue
+                    Assignment result= BacktrackingSearchSolve(csp, as); //if continue has a complete solution, then return else delete from the current assignment.
                     if(result!= null){
                         return result;
                     }
                     as.delete(v);
-                }else{
+                }else{ //else delete from assignment and try with another possible value
                     as.delete(v);
                 }
             }
