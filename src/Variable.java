@@ -6,6 +6,11 @@ public class Variable {
         this.name = name;
         this.dom =dom;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 
 

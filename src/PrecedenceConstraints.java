@@ -1,5 +1,6 @@
 import java.util.HashSet;
 
+// va + val <= vb
 public class PrecedenceConstraints extends Constraint {
     Variable va;
     Variable vb;
@@ -19,5 +20,10 @@ public class PrecedenceConstraints extends Constraint {
             return ((Integer.parseInt(a.getValue()) + this.val) <= Integer.parseInt(b.getValue()));
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return va.name + " + " + val + " <= "+vb.name;
     }
 }
