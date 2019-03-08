@@ -65,7 +65,7 @@ public class JobCSP extends CSP {
         this.constraints.add(new DisjunctiveConstraint(new PrecedenceConstraints(AxleF,10,AxleB), new PrecedenceConstraints(AxleB,10,AxleF)));
 
 
-        //For every variable except Inspect we add a constraint of the form X + dX ≤ Inspect.
+        //For every variable except Inspect we add a constraint of the form X + dX <= Inspect.
         this.constraints.add( new PrecedenceConstraints(AxleF,10,Inspect));
         this.constraints.add( new PrecedenceConstraints(AxleB,10,Inspect));
         this.constraints.add( new PrecedenceConstraints(WheelRF,1,Inspect));
